@@ -22,7 +22,7 @@ public class App {
         System.out.println("------------------------------------------");
 
         /*
-        * 1) Create a textfile (.txt) and fill it with some text content. (/content/text_article.txt)
+        * 1) Create a text file (.txt) and fill it with some text content. (/content/text_article.txt)
         * In Java create a method that read in a String from file and return the String using FileReader.
         */
 
@@ -97,10 +97,10 @@ public class App {
          * b. Car should have fields: carId, regNumber, brand, model, regDate and owner. It
          * should also implement Serializable together with a default constructor.
          * c. Owner should have fields: ownerId, name, birthdate. Owner also need to implement
-         * Serializable and have a default contructor.
+         * Serializable and have a default constructor.
          * d. Create two collections, one for Cars and the other for Owners.
          * e. Create functionality to serialize the collections to JSON files.
-         * f. Create functionality to deserialize the JSON files to it’s resepective Collection.
+         * f. Create functionality to deserialize the JSON files to it’s respective Collection.
          */
     }
 
@@ -165,7 +165,7 @@ public class App {
 
 
     public static void copy_model_files(File source, File destination) {
-        //4
+
         try (
                 FileInputStream inputStream = new FileInputStream(source);
                 BufferedInputStream in = new BufferedInputStream(inputStream);
