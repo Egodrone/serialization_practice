@@ -3,8 +3,6 @@ package se.lexicon;
 
 
 import se.lexicon.model.Car;
-import se.lexicon.model.Starship;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -89,6 +87,8 @@ public class App {
         carList.add(new Car("ART 342", "Volvo", "X60", 2020));
         carList.add(new Car("XCT 992", "BMW", "AAA", 2021));
         carList.add(new Car("ART 342", "Nissan", "BBB", 2000));
+
+        String carTxtFiles = "cars/car_file.txt";
         carList.forEach(System.out::println);
 
         /*
