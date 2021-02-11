@@ -87,7 +87,11 @@ public class App {
          * a. Create models Car and Owner.
          * b. Car should have fields: carId, regNumber, brand, model, regDate and owner. It
          * should also implement Serializable together with a default constructor.
-         *
+         * c. Owner should have fields: ownerId, name, birthdate. Owner also need to implement
+         * Serializable and have a default contructor.
+         * d. Create two collections, one for Cars and the other for Owners.
+         * e. Create functionality to serialize the collections to JSON files.
+         * f. Create functionality to deserialize the JSON files to it’s resepective Collection.
          */
     }
 
