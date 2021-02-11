@@ -2,6 +2,9 @@ package se.lexicon;
 
 
 
+import se.lexicon.model.Car;
+import se.lexicon.model.Starship;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -81,6 +84,12 @@ public class App {
          * c. Read the List of Cars from file using ObjectInputStream.
          */
 
+        //List<Car> carList =
+        List<Car> carList = new ArrayList<>();
+        carList.add(new Car("ART 342", "Volvo", "X60", 2020));
+        carList.add(new Car("XCT 992", "BMW", "AAA", 2021));
+        carList.add(new Car("ART 342", "Nissan", "BBB", 2000));
+        carList.forEach(System.out::println);
 
         /*
          * 6) Make a small program called car_register.
