@@ -3,6 +3,8 @@ package se.lexicon;
 
 
 import se.lexicon.model.Car;
+import se.lexicon.util.SerializationUtil;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -74,6 +76,7 @@ public class App {
         copy_model_files(copyFilesFrom, copyFilesTo);
 
         System.out.println("------------------------------------------");
+
         /*
          * 5) In Java create a class called Car with properties like reg number, brand and model etc... The
          * Car class must implement Serializable. To also fulfil the contract make a default constructor.
@@ -82,7 +85,6 @@ public class App {
          * c. Read the List of Cars from file using ObjectInputStream.
          */
 
-        //List<Car> carList =
         List<Car> carList = new ArrayList<>();
         carList.add(new Car("ART 342", "Volvo", "X60", 2020));
         carList.add(new Car("XCT 992", "BMW", "AAA", 2021));
@@ -90,6 +92,12 @@ public class App {
 
         String carTxtFiles = "cars/car_file.txt";
         carList.forEach(System.out::println);
+
+        SerializationUtil.serialize(carList);
+        System.out.println("------------------------------------------");
+
+        List<Car> newCarList = SerializationUtil.deserialize("java.util.ArrayList.ser");
+        newCarList.forEach(System.out::println);
 
         /*
          * 6) Make a small program called car_register.
@@ -114,7 +122,6 @@ public class App {
         ) {
             int i;
             while ((i = reader.read()) != -1) {
-                // append to string
                 char letter = (char) i;
                 sb.append(letter);
             }
