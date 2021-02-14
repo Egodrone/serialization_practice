@@ -21,18 +21,19 @@ public class CarRegisterApp {
         List<Car> cars = new ArrayList<>();
         List<Owner> owners = new ArrayList<>();
 
-        Car bugatti = new Car("ABC123","Bugatti","Veyron EB", "David", LocalDate.parse("2021-02-27"));
-        Car bmw = new Car("TTB666","BMW","X6", "Helen", LocalDate.parse("2020-01-01"));
-        cars.add(bugatti);
-        cars.add(bmw);
-
         Owner owner1 = new Owner("Stefan", LocalDate.parse("1980-01-01"));
         Owner owner2 = new Owner("Jocko", LocalDate.parse("1990-01-01"));
+
         owners.add(owner1);
         owners.add(owner2);
 
-        File carFile= new File("cars.json");
-        File ownerFile= new File("owner.json");
+        Car bugatti = new Car("ABC123","Bugatti","Veyron EB", owner1, LocalDate.parse("2021-02-27"));
+        Car bmw = new Car("TTB666","BMW","X6", owner2, LocalDate.parse("2020-01-01"));
+        cars.add(bugatti);
+        cars.add(bmw);
+
+        File carFile = new File("cars.json");
+        File ownerFile = new File("owner.json");
 
         util.serializeCarListToJson(cars, carFile);
         util.serializeOwnerListToJson(owners, ownerFile);

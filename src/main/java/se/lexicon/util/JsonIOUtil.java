@@ -94,20 +94,4 @@ public class JsonIOUtil {
 
 
 
-    public Car deserializeJsonToCar(File file){
-        Car result= new Car();
-
-        try{
-            result = objectMapper.readValue(file, new TypeReference<Car>() {});
-        } catch (JsonParseException | JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return result;
-    }
-
-
-
 }

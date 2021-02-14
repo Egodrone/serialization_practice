@@ -19,7 +19,7 @@ public class Car implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     private String model;
     @JsonFormat(shape = JsonFormat.Shape.STRING)
-    private String owner;
+    private Owner owner;
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     private LocalDate regDate;
 
@@ -30,7 +30,7 @@ public class Car implements Serializable {
 
 
 
-    public Car(String regNumber, String brand, String model, String owner, LocalDate regDate) {
+    public Car(String regNumber, String brand, String model, Owner owner, LocalDate regDate) {
         this.carId = UUID.randomUUID();
         this.regNumber = regNumber;
         this.brand = brand;
