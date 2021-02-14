@@ -4,7 +4,6 @@ package se.lexicon;
 
 import se.lexicon.model.Car;
 import se.lexicon.util.SerializationUtil;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
@@ -90,14 +89,15 @@ public class App {
         carList.add(new Car("XCT 992", "BMW", "AAA", 2021));
         carList.add(new Car("ART 342", "Nissan", "BBB", 2000));
 
-        String carTxtFiles = "cars/car_file.txt";
         carList.forEach(System.out::println);
 
         SerializationUtil.serialize(carList);
         System.out.println("------------------------------------------");
 
         List<Car> newCarList = SerializationUtil.deserialize("java.util.ArrayList.ser");
-        newCarList.forEach(System.out::println);
+        if (newCarList != null) {
+            newCarList.forEach(System.out::println);
+        }
 
         /*
          * 6) Make a small program called car_register.
@@ -110,6 +110,9 @@ public class App {
          * e. Create functionality to serialize the collections to JSON files.
          * f. Create functionality to deserialize the JSON files to it’s respective Collection.
          */
+
+        // In the CarRegisterApp
+
     }
 
 
